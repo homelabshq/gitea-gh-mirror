@@ -170,10 +170,15 @@ cannot create /app/data/.encryption_secret: Permission denied
 Errcode: 13 "Permission denied"
 ```
 
-The Compose file includes an `init-permissions` service that prepares the `./data` directory automatically. If you still see permission errors, run:
+The Compose file includes an `init-permissions` service that prepares the `./data` directory automatically.
+
+On Fedora, RHEL, CentOS, and other SELinux-enabled systems, normal ownership may not be enough. The Compose bind mounts use the `:z` option so Docker can relabel the mounted data directories for container access.
+
+If you still see permission errors, run:
 
 ```sh
-sudo mkdir -p data/gitea/data data/gitea/config data/db
+docker compose down
+sudo mkdir -p data/gitea/data data/gitea/config data/db data/gitea-mirror
 sudo chown -R 1000:1000 data
 docker compose up -d
 ```
