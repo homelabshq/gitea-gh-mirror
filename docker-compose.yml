@@ -56,7 +56,7 @@ services:
       retries: 5
 
   gitea-mirror:
-    image: ghcr.io/raylabshq/gitea-mirror:v3.16.3@ sha256:b4d9bcfb6fdd898ad4aa2e640b07b9cf27a9fb88eec980371d24d25422353e3a
+    image: ghcr.io/raylabshq/gitea-mirror:v3.16.3@sha256:b4d9bcfb6fdd898ad4aa2e640b07b9cf27a9fb88eec980371d24d25422353e3a
     container_name: gitea-mirror
     restart: unless-stopped
     depends_on:
