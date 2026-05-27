@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "docker:pinDigests"
+  ],
+  "docker-compose": {
+    "fileMatch": [
+      "(^|/)docker-compose\\.ya?ml$"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "Group Docker image updates into a single PR",
+      "matchDatasources": [
+        "docker"
+      ],
+      "groupName": "docker image updates",
+      "separateMajorMinor": true
+    },
+    {
+      "description": "Do not automerge critical infrastructure updates",
+      "matchPackageNames": [
+        "gitea/gitea",
+        "mariadb"
+      ],
+      "automerge": false
+    }
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5
+}
