@@ -5,8 +5,8 @@
     "docker:pinDigests"
   ],
   "docker-compose": {
-    "fileMatch": [
-      "(^|/)docker-compose\\.ya?ml$"
+    "managerFilePatterns": [
+      "/(^|/)docker-compose\\.ya?ml$/"
     ]
   },
   "packageRules": [
