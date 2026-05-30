@@ -1,6 +1,6 @@
 services:
   init-permissions:
-    image: alpine:3.22.4@sha256:310c62b5e7ca5b08167e4384c68db0fd2905dd9c7493756d356e893909057601
+    image: alpine:3.23.4@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
     user: "0:0"
     restart: "no"
     command: >
@@ -36,7 +36,7 @@ services:
       GITEA__database__PASSWD: "14B3C9B53A17A797"
 
   db:
-    image: mariadb:11.2.4@sha256:e9ea1dbab6783ff0281e41e3357d950a5f598b2033559b8443e03b181807910b
+    image: mariadb:11.8.8@sha256:7974b628cbb4a37c4108d82f1e1d1123d1857ae3d94ab6fb20b8ad8580c271c8
     user: "1000:1000"
     restart: unless-stopped
     depends_on:
