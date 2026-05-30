@@ -36,7 +36,7 @@ services:
       GITEA__database__PASSWD: "14B3C9B53A17A797"
 
   db:
-    image: mariadb:11.2.4@sha256:e9ea1dbab6783ff0281e41e3357d950a5f598b2033559b8443e03b181807910b
+    image: mariadb:12.2.2@sha256:6a4c4bbf0447c2247801309513fcc0dd17c3f35390368139ce419387fdd1144d
     user: "1000:1000"
     restart: unless-stopped
     depends_on:
